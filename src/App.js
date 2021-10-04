@@ -1,10 +1,14 @@
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
-import Navbar from "./Navbar"
-import Sidebar from "./Sidebar"
-import Footer from "./Footer"
+import Navbar from "./components/Navbar"
+import Sidebar from "./components/Sidebar"
+import Footer from "./components/Footer"
 
-import PageWelcome from "./pages/Welcome"
+import PageWelcome from "./components/pages/Welcome"
+import PageNotFound from "./components/pages/NotFound"
+
+import PageLogin from "./components/pages/Login"
+import PageSignUp from "./components/pages/SignUp"
 
 function App() {
   return (
@@ -19,9 +23,14 @@ function App() {
 
           <Sidebar />
 
-          <div class="content-wrapper" style={{"minHeight": "914px"}}>
+          <div class="content-wrapper" style={{"minHeight": `${window.innerHeight}px`}}>
             <Switch>
               <Route path="/" exact component={PageWelcome} />
+
+              <Route path="/login" exact component={PageLogin} />
+              <Route path="/sign_up" exact component={PageSignUp} />
+
+              <Route path="/" component={PageNotFound} />
             </Switch>
           </div>
 
