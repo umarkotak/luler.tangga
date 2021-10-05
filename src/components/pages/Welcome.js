@@ -3,14 +3,14 @@ import React from "react"
 function Welcome() {
   return (
     <div>
-      <div class="content-header">
-        <div class="container-fluid">
-          <h1 class="m-0">Welcome!</h1>
+      <div className="content-header">
+        <div className="container-fluid">
+          <h1 className="m-0">Welcome!</h1>
         </div>
       </div>
 
-      <section class="content">
-        <div class="container-fluid">
+      <section className="content">
+        <div className="container-fluid">
         </div>
       </section>
     </div>

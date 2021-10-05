@@ -13,17 +13,17 @@ import PageSignUp from "./components/pages/SignUp"
 function App() {
   return (
     <Router>
-      <body class="layout-fixed control-sidebar-slide-open dark-mode layout-navbar-fixed text-sm layout-footer-fixed" style={{"height": "auto"}}>
-        <div class="wrapper">
-          <div class="preloader flex-column justify-content-center align-items-center" style={{"height": "0px"}}>
-            <img class="animation__shake" src="/logo512.png" alt="AdminLTELogo" height="60" width="60" style={{"display": "none"}} />
+      <div className="layout-fixed control-sidebar-slide-open dark-mode layout-navbar-fixed text-sm layout-footer-fixed" style={{"height": "auto"}}>
+        <div className="wrapper">
+          <div className="preloader flex-column justify-content-center align-items-center" style={{"height": "0px"}}>
+            <img className="animation__shake" src="/logo512.png" alt="AdminLTELogo" height="60" width="60" style={{"display": "none"}} />
           </div>
 
           <Navbar />
 
           <Sidebar />
 
-          <div class="content-wrapper" style={{"minHeight": `${window.innerHeight}px`}}>
+          <div className="content-wrapper" style={{"minHeight": `${window.innerHeight}px`}}>
             <Switch>
               <Route path="/" exact component={PageWelcome} />
 
@@ -36,7 +36,7 @@ function App() {
 
           <Footer />
         </div>
-      </body>
+      </div>
     </Router>
   )
 }

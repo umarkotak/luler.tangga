@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="main-header navbar navbar-expand dropdown-legacy navbar-dark">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link" data-widget="pushmenu" href="#" role="button"><i className="fas fa-bars"></i></Link>
+          <Link to="#" className="nav-link" data-widget="pushmenu" href="#" role="button"><i className="fas fa-bars"></i></Link>
         </li>
         <li className="nav-item d-none d-sm-inline-block">
           <Link to="/" className="nav-link">Welcome</Link>

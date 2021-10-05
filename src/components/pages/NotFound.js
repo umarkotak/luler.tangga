@@ -3,14 +3,14 @@ import React from "react"
 function NotFound() {
   return (
     <div>
-      <div class="content-header">
-        <div class="container-fluid">
+      <div className="content-header">
+        <div className="container-fluid">
           <h1>Page Not Found</h1>
         </div>
       </div>
 
-      <section class="content">
-        <div class="container-fluid">
+      <section className="content">
+        <div className="container-fluid">
         </div>
       </section>
     </div>

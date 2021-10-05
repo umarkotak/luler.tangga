@@ -8,23 +8,43 @@ class LulerTanggaApi {
   }
 
   async UserRegister(requestBody) {
-    return this.baseHttpCall(
+    return this.BaseHttpCall(
       "POST",
       `${this.LulerTanggaApiHost}/users/register`,
-      null,
-      null,
+      {},
+      {},
       requestBody
     )
   }
 
-  async baseHttpCall(method, url, headers, requestQuery, requestBody) {
-    url.search = new URLSearchParams(requestQuery).toString()
-    const response = await fetch(url, {
+  async UserLogin(requestBody) {
+    return this.BaseHttpCall(
+      "POST",
+      `${this.LulerTanggaApiHost}/users/login`,
+      {},
+      {},
+      requestBody
+    )
+  }
+
+  async BaseHttpCall(method, url, headers, requestQuery, requestBody) {
+    var uri = new URL(url)
+    uri.search = new URLSearchParams(requestQuery).toString()
+    headers['Content-Type'] = 'application/json'
+
+    console.log(`${method} ${uri} REQUEST`, requestBody)
+    const response = await fetch(uri, {
       method: method,
       headers: headers,
       body: JSON.stringify(requestBody)
     })
-    console.log(`${method} ${url} RESULT: ${response.json}`)
-    return response
+    var body = response.json()
+    console.log(`${method} ${uri} RESPONSE`, body)
+
+    return { status: response.status, body: body }
   }
 }
+
+const lulerTanggaApi = new LulerTanggaApi()
+
+export default lulerTanggaApi
